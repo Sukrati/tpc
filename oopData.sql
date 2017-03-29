@@ -13,13 +13,13 @@ Create table TechStudent(
   sid int(3) primary key,
   branch varchar(10) not null,
   requirements varchar(20)
-  Constraint fk_sid Foreign key(sid) references Student(sid)
+  Constraint fk_sidt Foreign key(sid) references Student(sid)
 );
 
 Create table NonTechStudent(
   sid int(3) primary key,
   requirements varchar(20)
-  Constraint fk_sid Foreign key(sid) references Student(sid)
+  Constraint fk_sidn Foreign key(sid) references Student(sid)
 );
 
 Create table Company(
@@ -37,13 +37,13 @@ Create table TechCompany(
   cid int(3) primary key,
   branch varchar(10) not null,
   requirements varchar(20)
-  Constraint fk_sid Foreign key(sid) references Student(sid)
+  Constraint fk_cidt Foreign key(cid) references Company(cid)
 );
 
 Create table NonTechCompany(
   sid int(3) primary key,
   requirements varchar(20)
-  Constraint fk_sid Foreign key(sid) references Student(sid)
+  Constraint fk_cidn Foreign key(cid) references Company(cid)
 );
 
 Create table CellMember(
