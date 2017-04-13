@@ -11,13 +11,13 @@ Create table Student(
 
 Create table TechStudent(
   sid varchar(10) primary key,
-  branch varchar(10) not null
+  branch varchar(10) not null,
   Constraint fk_sidt Foreign key(sid) references Student(sid)
 );
 
 Create table NonTechStudent(
   sid varchar(10) primary key,
-  interest varchar(20)
+  interest varchar(20),
   Constraint fk_sidn Foreign key(sid) references Student(sid)
 );
 
@@ -34,13 +34,13 @@ Create table Company(
 Create table TechCompany(
   cIN int(3) primary key,
   branch varchar(10) not null,
-  requirements varchar(20)
+  requirements varchar(20),
   Constraint fk_cidt Foreign key(cIN) references Company(cIN)
 );
 
 Create table NonTechCompany(
   cIN int(3) primary key,
-  requirements varchar(20)
+  requirements varchar(20),
   Constraint fk_cidn Foreign key(cIN) references Company(cIN)
 );
 
