@@ -180,4 +180,97 @@ public class tpo {
 			}
 		
 	}
+	public void editCellMember(String field,int id,String attribute){
+		Connection con=null;
+		try
+		{
+			String sql;
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","sanya1234");
+			PreparedStatement ps;
+			if(field.equals("cname")){
+				sql="UPDATE CellMember set cname= ? where cid=?";
+				ps=con.prepareStatement(sql);
+				ps.setString(1,attribute);
+				ps.setInt(2, id);
+				ps.executeUpdate();
+			}
+			if(field.equals("cpassword")){
+				sql="UPDATE CellMember set cpassword= ? where cid=?";
+				ps=con.prepareStatement(sql);
+				ps.setString(1,attribute);
+				ps.setInt(2, id);
+				ps.executeUpdate();
+			}
+			if(field.equals("ContactNumber")){
+				sql="UPDATE CellMember set ContactNumber= ? where cid=?";
+				ps=con.prepareStatement(sql);
+				ps.setString(1,attribute);
+				ps.setInt(2, id);
+				ps.executeUpdate();
+			}
+			if(field.equals("cEmailId")){
+				sql="UPDATE CellMember set cEmailId= ? where cid=?";
+				ps=con.prepareStatement(sql);
+				ps.setString(1,attribute);
+				ps.setInt(2, id);
+				ps.executeUpdate();
+			}
+			if(field.equals("year")){
+				sql="UPDATE CellMember set year= ? where cid=?";
+				ps=con.prepareStatement(sql);
+				ps.setString(1,attribute);
+				ps.setInt(2, id);
+				ps.executeUpdate();
+			}
+			if(field.equals("gender")){
+				sql="UPDATE CellMember set placementStatus= ? where cid=?";
+				ps=con.prepareStatement(sql);
+				ps.setString(1,attribute);
+				ps.setInt(2, id);
+				ps.executeUpdate();
+			}
+			if(field.equals("category")){
+				sql="UPDATE CellMember set category= ? where cid=?";
+				ps=con.prepareStatement(sql);
+				ps.setString(1,attribute);
+				ps.setInt(2, id);
+				ps.executeUpdate();
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println("exception");
+		}
+	
+}
+	public void insertCellMember(int cid,String cname,String password,String email,int contact,
+			String year,String gender,String category){
+		
+		Connection con=null;
+			try
+			{
+				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/tpc?autoReconnect=true&useSSL=false","root","sanya1234");
+				
+				String a="insert into CellMember values(?,?,?,?,?,?,?,?)";
+				
+				PreparedStatement preparedStmt = con.prepareStatement(a);
+				  preparedStmt.setInt(1,cid);
+				  preparedStmt.setString (2,cname);
+				  preparedStmt.setString (3, password);
+				  preparedStmt.setString (4,email);
+				  preparedStmt.setDouble(5, contact);
+				  preparedStmt.setString(6,year);
+				  preparedStmt.setString(7,gender);
+				  preparedStmt.setString(8,category);
+				  
+				  preparedStmt.execute();
+				
+			}
+			catch(SQLException e){
+				e.printStackTrace();
+			}
+	}
+	
+	
+	
 }

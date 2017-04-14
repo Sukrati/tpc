@@ -1,0 +1,5 @@
+package oop_project;
+
+public class CompanyStatsManager extends CellMember{
+
+}

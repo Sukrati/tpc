@@ -2,11 +2,11 @@ package oop_project;
 
 import java.sql.*;
 
-public class TechStudent implements student {
+public class TechStudent{
 	String id;
 	String name;
 	String password, emailId, placedComp;
-	Double cpi, salary;
+	double cpi, salary;
 	int placementStatus;
 	String branch;
 

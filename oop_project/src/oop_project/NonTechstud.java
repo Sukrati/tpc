@@ -4,11 +4,11 @@ package oop_project;
 import java.sql.*;
 
 
-public class NonTechstud implements student{
+public class NonTechstud{
 	String id;
 	String name;
 	String password,emailId,placedComp;
-	Double cpi,salary;
+	double cpi,salary;
 	int placementStatus;
 	String interest;
 	

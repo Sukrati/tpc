@@ -10,7 +10,8 @@ public class app {
 		//System.out.println(s2.id);
 		tpo t=new tpo();
 		//t.insertTechStud("4", "meetasga","dd", "dk@hmh", 10.33, 1,"abcd", 2.43, "cse");
-		t.editTechStudent("sid", "2", "15ucs072");
+		//t.insertCellMember(12, "sid", "2", "15ucs072", 0, null, null, "studentStats");
+		t.editCellMember("cname", 12, "meetasha");
 	}
 
 }
